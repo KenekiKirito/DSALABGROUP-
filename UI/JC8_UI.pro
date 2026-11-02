@@ -16,6 +16,8 @@ HEADERS += \
 FORMS += \
     mainwindow.ui
 
+include($$PWD/modules/jc8-invoice/JC8InvoiceCore.pri)
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
