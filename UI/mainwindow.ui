@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QFrame" name="frame">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame { background-color: #3b6ea8; }
+QLabel { color: white; font-weight: bold; }
+QPushButton { color: white; border: none; background: transparent; padding: 8px; }
+QPushButton:hover { background-color: #2f5a8c; }</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>JC8 TRADING</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="menuButton">
+         <property name="text">
+          <string>MENU</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="invoiceButton">
+         <property name="text">
+          <string>NEW INVOICE</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="salesButton">
+         <property name="text">
+          <string>SALES REPORT</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="inventoryButton">
+         <property name="text">
+          <string>INVENTORY</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QStackedWidget" name="pagesStack">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="pageMenu">
+       <widget class="QLabel" name="titleLabel">
+        <property name="geometry">
+         <rect>
+          <x>160</x>
+          <y>95</y>
+          <width>421</width>
+          <height>91</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font-size: 64px; font-weight: bold; color: #0b4a9c;</string>
+        </property>
+        <property name="text">
+         <string>JC8 TRADING</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="subtitleLabel">
+        <property name="geometry">
+         <rect>
+          <x>300</x>
+          <y>180</y>
+          <width>161</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font-size: 12px; font-weight: bold; color: #0b4a9c;</string>
+        </property>
+        <property name="text">
+         <string>Automated Invoice System</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="pageInvoice">
+       <widget class="QFrame" name="leftPanel">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>3</y>
+          <width>641</width>
+          <height>491</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QFrame { background-color: white; }</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QLineEdit" name="searchBox"/>
+           </item>
+           <item>
+            <widget class="QPushButton" name="searchButton">
+             <property name="text">
+              <string>Search</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QTableWidget" name="catalogTable">
+           <column>
+            <property name="text">
+             <string>Code</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Item</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Piece</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Rolls</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Box</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Add</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QFrame" name="rightPanel">
+        <property name="geometry">
+         <rect>
+          <x>660</x>
+          <y>0</y>
+          <width>278</width>
+          <height>362</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QFrame { background-color: white; }</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Active Invoice</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTableWidget" name="invoiceTable">
+           <column>
+            <property name="text">
+             <string>Item</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Type</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Qty</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Total</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QPushButton" name="undoButton">
+             <property name="text">
+              <string>Undo</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="redoButton">
+             <property name="text">
+              <string>Redo</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="removeButton">
+             <property name="text">
+              <string>Remove Item</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLabel" name="subtotalLabel">
+           <property name="text">
+            <string>Subtotal: ₱0.00</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="taxLabel">
+           <property name="text">
+            <string>Tax (12%): ₱0.00</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="totalLabel">
+           <property name="text">
+            <string>Total: ₱0.00</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="checkoutButton">
+           <property name="styleSheet">
+            <string notr="true">QPushButton { background-color: #1f4e96; color: white; padding: 8px; font-size: 14px; }</string>
+           </property>
+           <property name="text">
+            <string>Checkout</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="pageSales">
+       <widget class="QFrame" name="cardsRow">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>20</y>
+          <width>310</width>
+          <height>110</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>110</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QFrame#totalCard, QFrame#bestCard, QFrame#leastCard { background-color: white; }</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::Shape::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Shadow::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item>
+            <widget class="QFrame" name="totalCard">
+             <property name="frameShape">
+              <enum>QFrame::Shape::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Shadow::Raised</enum>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_4">
+              <item>
+               <widget class="QLabel" name="totalSales">
+                <property name="text">
+                 <string>Total Sales</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="totalSalesValue">
+                <property name="text">
+                 <string>₱0.00</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="bestCard">
+             <property name="frameShape">
+              <enum>QFrame::Shape::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Shadow::Raised</enum>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_5">
+              <item>
+               <widget class="QLabel" name="bestSeller">
+                <property name="text">
+                 <string>Best Seller</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="bestSellerName">
+                <property name="text">
+                 <string>bestSellerName</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="bestSellerUnits">
+                <property name="text">
+                 <string>bestSellerUnits</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="leastCard">
+             <property name="frameShape">
+              <enum>QFrame::Shape::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Shadow::Raised</enum>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_6">
+              <item>
+               <widget class="QLabel" name="leastSold">
+                <property name="text">
+                 <string>Least Sold</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="leastSoldName">
+                <property name="text">
+                 <string>leastSoldName</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="leastSoldUnits">
+                <property name="text">
+                 <string>leastSoldUnits</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QLabel" name="movementLabel">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>190</y>
+          <width>121</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Product Movement</string>
+        </property>
+       </widget>
+       <widget class="QTableWidget" name="salesTable">
+        <property name="geometry">
+         <rect>
+          <x>55</x>
+          <y>220</y>
+          <width>531</width>
+          <height>192</height>
+         </rect>
+        </property>
+        <column>
+         <property name="text">
+          <string>Item</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Units Sold</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Status</string>
+         </property>
+        </column>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="pageInventory">
+       <widget class="QTableWidget" name="inventoryTable">
+        <property name="geometry">
+         <rect>
+          <x>5</x>
+          <y>0</y>
+          <width>971</width>
+          <height>501</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
