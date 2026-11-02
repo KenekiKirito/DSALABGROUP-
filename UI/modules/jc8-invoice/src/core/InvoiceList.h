@@ -4,8 +4,6 @@
 
 namespace jc8 {
 
-// Active invoice storage: a hand-built singly linked list.
-// No STL container is used for the list or its nodes.
 class InvoiceList {
 private:
     struct Node {
@@ -96,7 +94,7 @@ public:
     InvoiceItem* findById(int lineId);
     const InvoiceItem* findById(int lineId) const;
 
-    // Position-based lookup is convenient for QAbstractTableModel::data().
+    // Position-based lookup
     InvoiceItem* itemAt(int index);
     const InvoiceItem* itemAt(int index) const;
     int indexOf(int lineId) const;
