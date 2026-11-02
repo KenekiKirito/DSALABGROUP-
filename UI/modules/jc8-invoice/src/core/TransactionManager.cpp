@@ -158,8 +158,7 @@ PricingSummary TransactionManager::calculateTotal() const {
     PricingSummary summary;
     summary.taxRate = taxRate_;
 
-    // Algorithm 3: traverse the active invoice once and accumulate the
-    // selected package prices, then apply tax to the subtotal.
+    // traversal total
     for (const InvoiceItem& item : invoice_) {
         summary.subtotal += item.lineTotal();
         summary.unitCount += item.quantity;
@@ -213,8 +212,6 @@ CheckoutResult TransactionManager::checkout(double cashTendered) {
     result.change = result.totals.changeFor(result.cashTendered);
     result.items = invoice_;
 
-    // A completed sale is a new transaction; it must not be undone into the
-    // next customer's invoice.
     resetInvoice();
     return result;
 }
@@ -298,8 +295,6 @@ bool TransactionManager::checkStock(std::string& error) const {
     }
 
     for (const InvoiceItem& item : invoice_) {
-        // Aggregate duplicate rows for the same product/package, and ask the
-        // catalog only once for that combination.
         bool seenEarlier = false;
         for (const InvoiceItem& other : invoice_) {
             if (other.lineId == item.lineId) {

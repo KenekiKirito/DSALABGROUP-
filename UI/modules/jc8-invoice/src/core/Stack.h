@@ -4,8 +4,6 @@
 
 namespace jc8 {
 
-// Hand-built linked-node stack. Used for the undo and redo histories.
-// No STL container is used for the stack or its nodes.
 template <typename T>
 class Stack {
 private:
@@ -70,8 +68,6 @@ public:
         ++size_;
     }
 
-    // Pops the top value into `out`. Returns false (and leaves `out`
-    // untouched) when the stack is empty.
     bool tryPop(T& out) {
         if (top_ == nullptr) {
             return false;
@@ -85,7 +81,6 @@ public:
         return true;
     }
 
-    // Removes the top value without returning it.
     void pop() {
         if (top_ == nullptr) {
             return;
@@ -96,7 +91,6 @@ public:
         --size_;
     }
 
-    // Copies the top value into `out`. Returns false when empty.
     bool tryTop(T& out) const {
         if (top_ == nullptr) {
             return false;
@@ -120,8 +114,6 @@ public:
         size_ = 0;
     }
 
-    // Removes the oldest entry (the bottom of the stack). Used to cap the
-    // undo history without giving up LIFO behaviour.
     void dropBottom() {
         if (top_ == nullptr) {
             return;
@@ -147,8 +139,6 @@ private:
     int size_ = 0;
 
     void copyFrom(const Stack& other) {
-        // Copy the source into a temporary stack (which reverses the order),
-        // then push that back so the original LIFO order is preserved.
         Stack temporary;
         for (const Node* current = other.top_; current != nullptr;
              current = current->next) {
